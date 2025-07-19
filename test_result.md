@@ -107,75 +107,93 @@ user_problem_statement: "Créer un site web complet pour L'envers - bar alternat
 backend:
   - task: "API Health Check"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Health check endpoint implemented at /api/health"
+      - working: true
+        agent: "testing"
+        comment: "✅ TESTED: Health check endpoint working correctly. Returns proper JSON response with status 'healthy' and service 'L'envers API'"
 
   - task: "Reservation System API"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "POST /api/reservations and GET /api/reservations endpoints implemented with MongoDB storage"
+      - working: true
+        agent: "testing"
+        comment: "✅ TESTED: Both reservation endpoints working correctly. POST creates reservations with proper validation and returns reservation_id. GET retrieves all reservations. Fixed MongoDB ObjectId serialization issue."
 
   - task: "Events Management API"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "GET /api/events and POST /api/events endpoints implemented with sample events data"
+      - working: true
+        agent: "testing"
+        comment: "✅ TESTED: Both events endpoints working correctly. GET returns sample events with proper structure. POST creates new events successfully. Fixed MongoDB ObjectId serialization issue."
 
   - task: "Newsletter Subscription API"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "medium"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "POST /api/newsletter/subscribe endpoint implemented with duplicate email check"
+      - working: true
+        agent: "testing"
+        comment: "✅ TESTED: Newsletter subscription working correctly. Handles new subscriptions and properly detects duplicate emails with appropriate messaging."
 
   - task: "Contact Form API"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "medium"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "POST /api/contact endpoint implemented for contact form submissions"
+      - working: true
+        agent: "testing"
+        comment: "✅ TESTED: Contact form endpoint working correctly. Successfully stores contact messages in database and returns proper success response."
 
   - task: "MongoDB Database Connection"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "MongoDB connection setup with motor async client and sample data initialization"
+      - working: true
+        agent: "testing"
+        comment: "✅ TESTED: Database connection verified through successful CRUD operations. Sample events auto-created on startup. All collections (reservations, events, newsletter, contact_messages) working correctly."
 
 frontend:
   - task: "Homepage with Hero Section"
