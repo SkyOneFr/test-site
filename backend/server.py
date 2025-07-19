@@ -93,7 +93,7 @@ async def create_reservation(reservation: ReservationRequest):
 @app.get("/api/reservations")
 async def get_reservations():
     try:
-        reservations = await db.reservations.find({}).to_list(100)
+        reservations = await db.reservations.find({}, {"_id": 0}).to_list(100)
         return {"reservations": reservations}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Erreur lors de la récupération: {str(e)}")
