@@ -81,6 +81,8 @@ async def create_reservation(reservation: ReservationRequest):
         
         # Save to database
         await db.reservations.insert_one(reservation_data)
+        # Remove the MongoDB _id field if it exists before returning
+        reservation_data.pop('_id', None)
         
         return {
             "success": True,
