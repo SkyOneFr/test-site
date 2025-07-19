@@ -276,12 +276,9 @@ metadata:
 
 test_plan:
   current_focus:
-    - "API Health Check"
-    - "Reservation System API"
-    - "Events Management API"
-    - "MongoDB Database Connection"
     - "Homepage with Hero Section"
     - "Reservation Form"
+    - "Navigation and Responsive Design"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
@@ -289,3 +286,5 @@ test_plan:
 agent_communication:
   - agent: "main"
     message: "Initial implementation complete. Created full-stack site for L'envers with reservation system, events display, contact forms and responsive design. All backend APIs implemented with MongoDB storage. Frontend has 5 main sections: home, about, events, reservation, contact. Need to test all backend endpoints and verify frontend functionality."
+  - agent: "testing"
+    message: "✅ BACKEND TESTING COMPLETE: All 6 backend tasks tested and working correctly. Fixed critical MongoDB ObjectId serialization issues in GET /api/events, GET /api/reservations, and POST /api/events endpoints. All APIs now properly handle CRUD operations with correct JSON responses. Database connection verified. Backend is fully functional and ready for frontend integration."
