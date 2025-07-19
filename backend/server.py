@@ -122,6 +122,8 @@ async def create_event(event: EventModel):
         }
         
         await db.events.insert_one(event_data)
+        # Remove the MongoDB _id field if it exists before returning
+        event_data.pop('_id', None)
         return {"success": True, "event": event_data}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Erreur lors de la création de l'événement: {str(e)}")
