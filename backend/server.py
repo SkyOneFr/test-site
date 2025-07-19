@@ -101,7 +101,7 @@ async def get_reservations():
 @app.get("/api/events")
 async def get_events():
     try:
-        events = await db.events.find({}).to_list(50)
+        events = await db.events.find({}, {"_id": 0}).to_list(50)
         return {"events": events}
     except Exception as e:
         return {"events": []}
